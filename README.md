@@ -16,4 +16,3 @@ In this README, I will summarize the key learnings from each assignment and the 
 - Achieved **95% validation accuracy** and **94.4% test accuracy** while significantly reducing computational cost.
 - Demonstrated that a well-optimized fully connected network can perform efficiently for small-scale image classification tasks, reducing **inference time, energy consumption, and training duration**.
 
----
