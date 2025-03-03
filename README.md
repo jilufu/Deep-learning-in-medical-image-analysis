@@ -1,10 +1,7 @@
 # Deep Learning for Medical Imaging – Assignments Overview
-
 ## Introduction
 This repository contains my assignments for the **Deep Learning for Medical Imaging** course. 
 In this README, I will summarize the key learnings from each assignment and the objectives achieved.
-
----
 
 ## Assignment 1: Handwritten Digit Recognition Using Fully Connected Neural Networks
 
