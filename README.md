@@ -19,9 +19,8 @@ In this README, I will summarize the key learnings from each assignment and the 
 ## Assignment 2: SPECT Image Classification for Parkinson’s Disease Staging
 
 ### **Objective**
-- Analyze **Single Photon Emission Computed Tomography (SPECT)** images from individuals with **Parkinson’s disease (PD)**.
-- Classify patients into **three illness stages ** based on disease severity.
-- It is a typical **multiclass classification** problem.
+- Analyze Single Photon Emission Computed Tomography (SPECT) images from individuals with Parkinson’s disease (PD).
+- Classify patients into three illness stages based on disease severity.
 
 ### **Key Learnings**
 1. **Image Preprocessing for Improved Feature Extraction**
