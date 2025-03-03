@@ -25,16 +25,20 @@ In this README, I will summarize the key learnings from each assignment and the 
 
 ### **Key Learnings**
 1. **Image Preprocessing for Improved Feature Extraction**
-   - Applied **cropping** to extract the central 50×50 pixels, focusing on the most relevant regions of the SPECT images.
-   - Used **normalization** to standardize pixel intensity values, reducing input variance and improving model convergence.
-   - These preprocessing steps enhanced the **signal-to-noise ratio**, leading to more stable and reliable training performance.
+   - Applied cropping to extract the central 50×50 pixels, focusing on the most relevant regions of the SPECT images.
+   - Used normalization to standardize pixel intensity values, reducing input variance and improving model convergence.
+   - These preprocessing steps enhanced the signal-to-noise ratio, leading to more stable and reliable training performance.
+  
+2. **Handling Imbalanced Classes**
+   - Used Random Oversampling or Adjusted the Weighted Loss Function to ensure a more balanced contribution of different classes in the loss function.
+   - To address insufficient sample size, applied image augmentation techniques to artificially increase dataset diversity.
 
-2. **Exploring Model Architectures & Transfer Learning**
+3. **Exploring Model Architectures & Transfer Learning**
    - Tested various deep learning models for feature extraction and classification, including **CNN-based architectures (Redefined VGG16, Redefined ResNet) and Transformer-based models (Redefined ViT)**.
-   - Leveraged **transfer learning** with pre-trained models to enhance generalization on the small dataset.
+   - Leveraged transfer learning with pre-trained models to enhance generalization on the small dataset.
    - Transfer learning significantly improved training stability and boosted accuracy beyond what was achievable with training from scratch.
 
-3. **Model Selection for Small Dataset Constraints**
+4. **Model Selection for Small Dataset Constraints**
    - Due to the limited number of training samples, opted for Redefined VGG16, a CNN model with fewer parameters, to prevent overfitting.
    - The reduced model complexity allowed for more efficient training while maintaining classification performance.
    - Achieved a final accuracy **exceeding the baseline of 25%**, demonstrating the effectiveness of a compact model when dealing with small medical datasets.
