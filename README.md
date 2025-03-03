@@ -41,3 +41,28 @@ In this README, I will summarize the key learnings from each assignment and the 
    - Due to the limited number of training samples, opted for Redefined VGG16, a CNN model with fewer parameters, to prevent overfitting.
    - The reduced model complexity allowed for more efficient training while maintaining classification performance.
    - Achieved a final accuracy **exceeding the baseline of 25%**, demonstrating the effectiveness of a compact model when dealing with small medical datasets.
+
+
+
+## Assignment 3: 3D MRI Image Classification for Brain Tumor Detection
+
+### **Objective**
+- Analyze **Magnetic Resonance Imaging (MRI)** scans from **normal individuals and patients with brain tumors**.
+- Predict subjects' **disease status** (normal or with brain tumors) using their **3D MRI images**.
+
+### **Key Learnings**
+1. **Data Preprocessing for Enhanced Model Performance**
+   - Applied **Contrast Adjustment** and **Normalization** to **reduce brightness variations between images**, enhancing training stability and improving model learning efficiency.
+   - Used **Trilinear Interpolation** for **upsampling/downsampling**, ensuring uniform **depth dimensions** across different patients’ **3D MRI scans**.
+
+2. **Exploring Different 3D MRI Classification Approaches**
+   - Tested **four different methods** based on **modified pre-trained VGG16 models** for **3D MRI brain tumor classification**:
+     - **Single Slice**
+     - **Late Fusion**
+     - **Early Fusion**
+     - **3D Model based on ResNet50**
+   - Compared the effectiveness of these approaches for extracting meaningful 3D features.
+
+3. **Model Selection & Performance**
+   - Selected **Late Fusion** as the final approach for classification, as it demonstrated superior performance in handling 3D MRI data.
+   - Achieved a final accuracy **nearly 20% higher than the baseline**, showcasing the effectiveness of this method for brain tumor detection.
