@@ -62,3 +62,19 @@ In this README, I will summarize the key learnings from each assignment and the 
 3. **Model Selection & Performance**
    - Selected **Late Fusion** as the final approach for classification, as it demonstrated superior performance in handling 3D MRI data with small sample size.
    - Achieved a final accuracy **nearly 20% higher than the baseline**, showcasing the effectiveness of this method for brain tumor detection.
+  
+
+
+## Assignment 4: Carotid Artery Segmentation from Sonography Images
+
+### **Objective**
+- Segment the **carotid artery** from **sonography images** using **semantic segmentation techniques**.
+
+### **Methodology**
+- Studied the **Fully Convolutional Network (FCN) architecture** and explored models suitable for **medical image segmentation**.
+- Implemented **U-Net** as the primary model for segmentation.
+- Evaluated model performance using the **Dice Coefficient**, selecting the most optimal model.
+
+### **Results**
+- Achieved a **Dice Coefficient of 0.95** on the test set, surpassing the **baseline by 0.03**.
+
