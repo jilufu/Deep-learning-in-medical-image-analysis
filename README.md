@@ -3,69 +3,31 @@
 This repository contains my assignments for the **Deep Learning for Medical Imaging** course. 
 In this README, I will summarize the key learnings from each assignment and the objectives achieved.
 
-## Assignment 1: Handwritten Digit Recognition Using Fully Connected Neural Networks
+
+## Abnormality Detection in Chest X-ray Images
 
 ### **Objective**
-- Analyze normalized handwritten digits from scanned envelopes by the U.S. Postal Service.
-- Predict digit IDs (0-9) from **16×16 grayscale images**.
+- Develop a **deep learning model** to detect abnormal regions in **chest X-ray images** using **bounding boxes** and annotate possible **chest diseases**.
 
-### **Key Learnings**
-1. Explored **neural network architectures** for image classification, specifically using **fully connected layers instead of CNNs**.
-2. Studied literature on similar handwritten digit datasets and applied **best practices in hyperparameter tuning**.
-3. Designed a **compact neural network** with two hidden layers, balancing efficiency and accuracy.
-4. Achieved **95% validation accuracy** and **94.4% test accuracy** while significantly reducing computational cost.
-5. Demonstrated that a well-optimized fully connected network can perform efficiently for small-scale image classification tasks, reducing **inference time, energy consumption, and training duration**.
+### **Methodology**
+- **Data Preprocessing**:
+  - Applied **log-transformation** to normalize intensity distribution and enhance abnormal structure visibility.
+  - Used **contrast adjustment** to highlight critical structures for better model recognition.
+- **Model Implementation**:
+  - Utilized a **ResNet-50-based Faster R-CNN** as the object detection framework.
+  - Replaced the **COCO pre-trained classification head** with a customized classification layer for the dataset.
+  - Integrated **NMS (Non-Maximum Suppression)** to retain the most confident predictions per category.
+- **Model Evaluation**:
+  - Assessed performance using **mAP (Mean Average Precision)** and **total loss analysis** (classification loss, bounding box regression loss, RPN losses).
+  - Applied **EigenCAM and AblationCAM** for model interpretability and visualization.
 
-## Assignment 2: SPECT Image Classification for Parkinson’s Disease Staging
+### **Results**
+- Achieved a **test set mAP of 0.277**, surpassing the **baseline**.
 
-### **Objective**
-- Analyze Single Photon Emission Computed Tomography (SPECT) images from individuals with Parkinson’s disease (PD).
-- Classify patients into three illness stages based on disease severity.
-
-### **Key Learnings**
-1. **Image Preprocessing for Improved Feature Extraction**
-   - Applied cropping to extract the central 50×50 pixels, focusing on the most relevant regions of the SPECT images.
-   - Used normalization to standardize pixel intensity values, reducing input variance and improving model convergence.
-   - These preprocessing steps enhanced the signal-to-noise ratio, leading to more stable and reliable training performance.
-  
-2. **Handling Imbalanced Classes**
-   - Used Random Oversampling or Adjusted the Weighted Loss Function to ensure a more balanced contribution of different classes in the loss function.
-   - To address insufficient sample size, applied image augmentation techniques to artificially increase dataset diversity.
-
-3. **Exploring Model Architectures & Transfer Learning**
-   - Tested various deep learning models for feature extraction and classification, including **CNN-based architectures (Redefined VGG16, Redefined ResNet) and Transformer-based models (Redefined ViT)**.
-   - Leveraged transfer learning with pre-trained models to enhance generalization on the small dataset.
-   - Transfer learning significantly improved training stability and boosted accuracy beyond what was achievable with training from scratch.
-
-4. **Model Selection for Small Dataset Constraints**
-   - Due to the limited number of training samples, opted for Redefined VGG16, a CNN model with fewer parameters, to prevent overfitting.
-   - The reduced model complexity allowed for more efficient training while maintaining classification performance.
-   - Achieved a final accuracy **exceeding the baseline of 25%**, demonstrating the effectiveness of a compact model when dealing with small medical datasets.
+### For a detailed report on this assignment, please refer to the [full report (PDF)](Assignment5_Report.pdf).
 
 
-
-## Assignment 3: 3D MRI Image Classification for Brain Tumor Detection
-
-### **Objective**
-- Analyze and predict**3D Magnetic Resonance Imaging (MRI)** scans from **normal individuals and patients with brain tumors**.
-
-### **Key Learnings**
-1. **Data Preprocessing for Enhanced Model Performance**
-   - Applied Contrast Adjustment and Normalization to **reduce brightness variations between images**, enhancing training stability and improving model learning efficiency.
-   - Used Trilinear Interpolation for upsampling, ensuring **uniform depth dimensions** across different patients’ 3D MRI scans.
-
-2. **Exploring Different 3D MRI Classification Approaches**
-   - Tested four different methods based on **modified pre-trained VGG16 models** for **3D MRI brain tumor classification**:
-     - Single Slice, Late Fusion, Early Fusion, 3D Model based on ResNet50
-   - Compared the effectiveness of these approaches for extracting meaningful 3D features.
-
-3. **Model Selection & Performance**
-   - Selected **Late Fusion** as the final approach for classification, as it demonstrated superior performance in handling 3D MRI data with small sample size.
-   - Achieved a final accuracy **nearly 20% higher than the baseline**, showcasing the effectiveness of this method for brain tumor detection.
-  
-
-
-## Assignment 4: Carotid Artery Segmentation from Sonography Images
+## Carotid Artery Segmentation from Sonography Images
 
 ### **Objective**
 - Segment the **carotid artery** from **sonography images** using **semantic segmentation techniques**.
@@ -77,4 +39,53 @@ In this README, I will summarize the key learnings from each assignment and the 
 
 ### **Results**
 - Achieved a **Dice Coefficient of 0.95** on the test set, surpassing the **baseline by 0.03**.
+
+
+
+
+## 3D MRI Image Classification for Brain Tumor Detection
+
+### **Objective**
+- Classify **brain tumor presence** using **3D MRI scans** from normal individuals and patients.
+
+### **Methodology**
+- **Preprocessing**: Applied **contrast adjustment, normalization**, and **trilinear interpolation** to standardize image depth and enhance feature visibility.
+- **Model Exploration**: Tested four **pre-trained VGG16-based** approaches (**Single Slice, Late Fusion, Early Fusion**) and a **ResNet50-based 3D model**.
+- **Final Model**: Selected **Late Fusion** for its superior performance on a small dataset.
+
+### **Results**
+- Achieved **nearly 20% higher accuracy than the baseline**, demonstrating the **effectiveness of Late Fusion for 3D MRI classification**.
+
+
+
+## SPECT Image Classification for Parkinson’s Disease Staging
+### **Objective**
+- Classify **Parkinson’s disease (PD) stages (1, 2, 3)** from **SPECT images** based on disease severity.
+
+### **Methodology**
+- **Preprocessing**: Cropped images to **50×50 pixels**, applied **normalization** to enhance stability and feature extraction.
+- **Class Imbalance Handling**: Used **Random Oversampling** and **Weighted Loss Adjustment** to balance training data.
+- **Model Selection**: Evaluated **CNN-based (Redefined VGG16, ResNet)** and **Transformer-based (ViT)** models with **transfer learning** for improved accuracy.
+- **Final Model**: Chose **Redefined VGG16** due to its efficiency in handling small datasets.
+
+### **Results**
+- Achieved **higher accuracy than the 25% baseline**, demonstrating **effective classification with a compact CNN model**.
+
+
+
+
+## Handwritten Digit Recognition Using Fully Connected Neural Networks
+
+### **Objective**
+- Classify **handwritten digits (0-9)** from **16×16 grayscale images** scanned by the U.S. Postal Service.
+
+### **Methodology**
+- Implemented a **fully connected neural network (two hidden layers)** instead of CNNs to reduce computational cost.
+- Applied **hyperparameter tuning** based on literature from similar datasets.
+- Optimized network design to balance **efficiency and accuracy**.
+
+### **Results**
+- Achieved **95% validation accuracy** and **94.4% test accuracy**.
+- Reduced **inference time, energy consumption, and training duration**, demonstrating the effectiveness of a compact network for small-scale image classification.
+
 
