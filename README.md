@@ -4,7 +4,7 @@ This repository contains my assignments for the **Deep Learning for Medical Imag
 In this README, I will summarize the key learnings from each assignment and the objectives achieved.
 
 
-## Abnormality Detection in Chest X-ray Images
+<h2 style="color:blue;"> Abnormality Detection in Chest X-ray Images</h2>
 
 ### **Objective**
 - Develop a **deep learning model** to detect abnormal regions in **chest X-ray images** using **bounding boxes** and annotate possible **chest diseases**.
