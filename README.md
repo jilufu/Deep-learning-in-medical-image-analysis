@@ -24,7 +24,7 @@ In this README, I will summarize the key learnings from each assignment and the 
 ### **Results**
 - Achieved a **test set mAP of 0.277**, surpassing the **baseline**.
 
-### For a detailed report on this assignment, please refer to the [full report (PDF)](Assignment5_Report.pdf).
+### For a detailed report on this assignment, please refer to the [full report (PDF)](object_detection_annotation_final_report.pdf).
 
 
 ## Carotid Artery Segmentation from Sonography Images
